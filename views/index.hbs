@@ -1,0 +1,35 @@
+<div class="title">
+    <div class="content">
+        {{#if email}}
+            <h1>Thank you for signing up.</h1>
+        {{else}}
+            <h1>Unlimited movies, TV shows and more.</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <form action="/signup" method="post">
+                <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+                <div class="email">
+                    <input type="email" name="emailInput" placeholder="Email address">
+                    <button type="submit">Get Started ></button>
+                </div>
+            </form>
+        {{/if}}
+    </div>
+</div>
+
+<!-- https://www.makeuseof.com/netflix-style-slider-component-css-and-javascript/ -->
+
+<div class="wrapper">
+    <section id="section1">
+        <a href="#section1" class="arrow__btn">‹</a>
+
+        {{#each data}}
+        <div class="item">
+            <a href="/movies/{{_id}}" class="movie__btn">
+            <img src="{{img}}">
+            </a>
+        </div>
+        {{/each}}
+        
+        <a href="#section1" class="arrow__btn">›</a>
+    </section>
+</div>
